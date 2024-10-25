@@ -8,9 +8,10 @@ https://docs.djangoproject.com/en/5.1/howto/deployment/wsgi/
 """
 
 import os
-
+from whitenoise import WhiteNoise
 from django.core.wsgi import get_wsgi_application
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'recipify.settings')
 
-application = get_wsgi_application()
+application = WhiteNoise(get_wsgi_application())
+app = application
