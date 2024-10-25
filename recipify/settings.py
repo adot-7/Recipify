@@ -158,3 +158,19 @@ SOCIALACCOUNT_PROVIDERS = {
 }
 
 SITE_ID = 1  # or the ID corresponding to your site
+
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [],  # You can leave this empty or add any global templates directory here
+        'APP_DIRS': True,  # This tells Django to look for templates in each app's templates folder
+        'OPTIONS': {
+            'context_processors': [
+                'django.template.context_processors.debug',
+                'django.template.context_processors.request',
+                'django.contrib.auth.context_processors.auth',
+                'django.contrib.messages.context_processors.messages',
+            ],
+        },
+    },
+]
