@@ -146,3 +146,15 @@ AUTHENTICATION_BACKENDS = [
 
 LOGIN_REDIRECT_URL = '/'       # Redirects users here after they log in
 LOGOUT_REDIRECT_URL = '/'      # Redirects users here after they log out
+
+SOCIALACCOUNT_PROVIDERS = {
+    'google': {
+        'APP': {
+            'client_id': os.getenv('CLIENT_ID_GOOGLE'),
+            'secret': os.getenv('CLIENT_SECRET_GOOGLE'),
+            'key': ''
+        }
+    }
+}
+
+SITE_ID = 1  # or the ID corresponding to your site
