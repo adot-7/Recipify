@@ -3,7 +3,6 @@ blinker==1.4
 certifi==2024.8.30
 cffi==1.17.1
 charset-normalizer==3.4.0
-command-not-found==0.3
 cryptography==43.0.3
 dbus-python==1.2.18
 distro==1.7.0
