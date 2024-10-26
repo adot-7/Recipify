@@ -1,12 +1,47 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recipify</title>
+    <link rel="stylesheet" href="{% static 'admin/css/landingPage.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <script src="{% static 'admin/js/landingPage.js' %}" defer type="module"></script>
 </head>
-<body>
-    <h1>Hello Kids.</h1>
-    
+<body  style="background-color: #FCFAEE !important;">
+    <header style="background-color: #FCFAEE !important;">
+        <div class="logo">
+            <a href="{% url "recipes:land" %}"><img src="https://cdn-icons-png.flaticon.com/512/6710/6710068.png" alt="Recipify Logo"></a>
+            <h2>Recipify</h2>
+        </div>
+        <nav>
+            <a href="../Auth/index.html">Sign In</a>
+            <a href="../About/about.html">About</a>
+        </nav>
+    </header>
+    <main>
+        <div class="container">
+            <div class="left-section">
+                <div class="text-content">
+                    <h1>Let's Get Cooking with</h1>
+                    <h3>Recipify!</h3>
+        
+                </div>
+                <div class="rot-image">
+                    <img src="{% static 'admin/img/plate.png' %}" alt="food plate" class="rotating">
+                </div>
+            </div>        
+            
+            <div class="button-container">
+                    <button class="fancy" id="get-started-btn">
+                        <span class="top-key"></span>
+                        <a href="{% url "recipes:getresponse" %}" id="">Let's Get Started</a>
+                        <span class="bottom-key-1"></span>
+                        <span class="bottom-key-2"></span>
+                    </button>
+                </div>
+            </div>
 </body>
 </html>

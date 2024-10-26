@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Results</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            padding: 20px; /* Add padding to the body */
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center content horizontally */
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px; /* Increased max width for better spacing */
+            margin: auto;
+            margin-top: 5vh;
+            display: grid; /* Use grid layout for responsive design */
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Responsive columns */
+            gap: 20px; /* Space between the cards */
+        }
+
+        .recipe-card {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-direction: column; /* Ensure content is vertical within each card */
+            transition: transform 0.3s; /* Add a hover effect */
+        }
+
+        .recipe-card:hover {
+            transform: translateY(-5px); /* Lift effect on hover */
+        }
+
+        h1,
+        h2 {
+            color: #5a5a8d;
+            margin: 0; /* Reset margin for headings */
+        }
+
+        .section {
+            margin-bottom: 15px;
+        }
+
+        .section-title {
+            font-weight: bold;
+            color: #5a5a8d;
+            margin-bottom: 8px;
+        }
+
+        .ingredients,
+        .instructions,
+        .macros {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .ingredients li,
+        .instructions li,
+        .macros li {
+            padding: 4px 0;
+        }
+
+        header {
+            background-color: white; /* Warm color */
+            padding: 1px;
+            display: flex;
+            margin-left: 10px;
+            justify-content: space-between;
+            width: 100%; /* Make header full width */
+            color: #000000;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #000000;
+            margin-right: 1px;
+            font-weight: bold;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #ff971f; /* Slightly darker on hover */
+            transform: scale(1.05);
+        }
+
+        /* Media queries for better responsiveness */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column; /* Stack items in header on small screens */
+                align-items: flex-start; /* Align items to the start */
+            }
+
+            nav {
+                margin-top: 10px; /* Space between logo and nav links */
+            }
+        }
+    </style>
+</head>
+
+<body style="background-color: #FCFAEE !important;">
+    <header style="background-color: #FCFAEE !important;">
+        <div class="logo">
+            <a href="{% url "recipes:land" %}"><img src="https://cdn-icons-png.flaticon.com/512/6710/6710068.png" alt="Recipify Logo"></a>
+            <h2>Recipify</h2>
+        </div>
+        <nav>
+            <a href="../About/about.html">About</a>
+        </nav>
+    </header>
+    <div class="container">
+        {% for recipe in recipes %}
+        <div class="recipe-card">
+            <h1>{{ recipe.name }}</h1>
+
+            <!-- Preparation Time -->
+            <div class="section" style="margin-top: 10px;">
+                <span class="section-title">Preparation Time:</span>
+                <span>{{ recipe.preparation_time }}</span>
+            </div>
+
+            <!-- Macros -->
+            <div class="section">
+                <h2>Macros (per serving):</h2>
+                <ul class="macros">
+                    <li>Calories: {{ recipe.macros.calories }}</li>
+                    <li>▪️ Protein: {{ recipe.macros.protein }}</li>
+                    <li>▪️ Carbohydrates: {{ recipe.macros.carbohydrates }}</li>
+                    <li>▪️ Fat: {{ recipe.macros.fats }}</li>
+                </ul>
+            </div>
+
+            <!-- Ingredients -->
+            <div class="section">
+                <h2>Ingredients:</h2>
+                <ul class="ingredients">
+                    {% for ingredient in recipe.ingredients %}
+                    <li>▪️ {{ ingredient }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+
+            <!-- Instructions -->
+            <div class="section">
+                <h2>Instructions:</h2>
+                <ul class="instructions">
+                    {% for step in recipe.instructions %}
+                    <li>{{ step }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+
+</html>

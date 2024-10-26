@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            height: 100vh; /* Full viewport height */
+            margin: 0;
+        }
+        .error-container {
+            text-align: left;
+            margin: auto;
+            margin-top: 20vh;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            max-width: 600px;
+            width: 90%;
+        }
+        h1 {
+            color: #e74c3c; /* Red color for error messages */
+            margin-bottom: 10px;
+        }
+        p {
+            margin: 10px 0;
+        }
+        a {
+            text-decoration: none;
+            color: #3498db; /* Blue color for links */
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        header {
+            background-color: white; /* Warm color */
+            padding: 1px;
+            display: flex;
+            margin-left: 10px;
+            justify-content: space-between;
+            
+            color: #000000;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #000000;
+            margin-right: 1px;
+            font-weight: bold;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #ff971f; /* Slightly darker on hover */
+            transform: scale(1.05);
+        }
+
+    </style>
+</head>
+<body style="background-color: #FCFAEE !important;">
+    <header style="background-color: #FCFAEE !important;">
+        <div class="logo">
+
+            <a href="{% url "recipes:land" %}"><img src="https://cdn-icons-png.flaticon.com/512/6710/6710068.png" alt="Recipify Logo"></a>
+            <h2>Recipify</h2>
+        </div>
+        <nav>
+            <a href="../About/about.html">About</a>
+        </nav>
+    </header>
+    <div class="error-container">
+        <h1>Oops! Something Went Wrong.</h1>
+        <p>We couldn't find the recipe you were looking for.</p>
+        <p>It could be due to:</p>
+        <ul>
+            <li>The ingredient you provided doesn't exist.</li>
+            <li>There was an error fetching data from the API.</li>
+            <li>The recipe might not be available at the moment.</li>
+        </ul>
+        <p>Please try again or go back to the <a href="/">homepage</a>.</p>
+    </div>
+</body>
+</html>
