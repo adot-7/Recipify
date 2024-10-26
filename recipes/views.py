@@ -89,3 +89,6 @@ def getresponse(request):
             # except:
             #     render(request, "notFound.html")
     return render(request, 'getPrompt.html')
+
+def about(request):
+    return render(request, 'about.html')
