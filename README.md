@@ -1,16 +1,16 @@
 # Recipify Project Documentation
 
 ## Table of Contents
-1. [Project Overview](#project-overview)
-2. [Key Features](#key-features)
-3. [Architecture and Technology Stack](#architecture-and-technology-stack)
-4. [Installation and Setup](#installation-and-setup)
-5. [Usage Guide](#usage-guide)
-6. [AI Functionality and Comparison](#ai-functionality-and-comparison)
-7. [Frontend Design](#frontend-design)
-8. [Deployment Process](#deployment-process)
+1. [Project Overview](#1-project-overview)
+2. [Key Features](#2-key-features)
+3. [Architecture and Technology Stack](#3-architecture-and-technology-stack)
+4. [Installation and Setup](#4-installation-and-setup)
+5. [Usage Guide](#5-usage-guide)
+6. [AI Functionality and Comparison](#6-ai-functionality-and-comparison)
+7. [Frontend Design](#7-frontend-design)
+8. [Deployment Process](#8-deployment-process)
 9. [Contributors](#9-contributors)
-10. [Future Enhancements](#future-enhancements)
+10. [Future Enhancements](#10-future-enhancements)
 
 ---
 
@@ -129,3 +129,6 @@ To deploy the application:
 * **Himanshu Jorwal** - Frontend/PPT Design
 * **Ankit Kumar** - Backend
 
+### 10. Future Enhancements
+
+* **Authentication using Django-allauth**
