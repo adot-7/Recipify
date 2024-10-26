@@ -21,6 +21,8 @@ def getresponse(request):
         meal_type=request.GET.get("meal_type")
         equipment=request.GET.getlist("equipment")
         time=request.GET.get('time')
+        if len(ingredient)<1:
+            return render(request, "notFound.html")
         prompt = f"Ingredients: {ingredient}, Meal: {meal_type}, Time: {time}, equipment: {equipment}"
         if prompt is not None and len(prompt)>0: #Check whether the length of string is not zero and not None
             api_key = os.getenv('API_KEY')
@@ -65,7 +67,6 @@ def getresponse(request):
             query_response_data = query_response.json()
             try:
                 answer_text = query_response_data['data']['answer']
-
             except:
                 return render(request, "notFound.html")
             json_str = re.sub(r'```json|```', '', answer_text).strip()
