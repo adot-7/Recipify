@@ -9,7 +9,7 @@
 6. [AI Functionality and Comparison](#ai-functionality-and-comparison)
 7. [Frontend Design](#frontend-design)
 8. [Deployment Process](#deployment-process)
-9. [Contributors](#contributors)
+9. [Contributors](#9-contributors)
 10. [Future Enhancements](#future-enhancements)
 
 ---
