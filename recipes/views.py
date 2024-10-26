@@ -51,7 +51,7 @@ def getresponse(request):
             submit_query_body = {
                 "endpointId": "predefined-openai-gpt4o",
                 "query": prompt,
-                "pluginIds": ["plugin-1712327325", "plugin-1713962163", "plugin-1726240248"],
+                "pluginIds": ["plugin-1712327325", "plugin-1713962163"],
                 "responseMode": "sync",
                 "modelConfigs": {
                     "fulfillmentPrompt": "Provide Indian style three recipes using only the listed ingredients, assuming basic Indian spices (such as mustard seeds, turmeric, cumin, chili powder, and salt) and using the cookware mentioned with cuisine type and time to make it.\nPlease provide the recipe information in JSON format with fields of name, preparation_time(with unit), macros(with unit)(calories, protein, carbohydrates, fats), ingredients and instructions.\nMake sure each field matches this structure.\nQuestion: {question}\nContext: {context}"
